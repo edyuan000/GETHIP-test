@@ -1,0 +1,14 @@
+- !!models.User
+    email: bob@gmail.com
+    username: BOB
+    password: hunter2
+
+- !!models.User
+    email: jeff@gmail.com
+    username: JEFF
+    password: hunter2
+
+- !!models.User
+    email: tim@gmail.com
+    username: TIM
+    password: hunter2

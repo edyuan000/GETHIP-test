@@ -1,0 +1,45 @@
+@(users: List[User], userForm: Form[User])
+
+@import helper._
+
+@main("User list") {
+	<h1>User List - @users.size() users found</h1>
+	
+	<div class="nav">
+	<ul>
+	
+	<li> <a href = "home"> HOME </a></li>
+	<li> <a href = "About Us"> About Us </a></li>
+	<li> <a href = "Contact Us"> Contact Us </a></li>
+	
+	<<ul>
+	<li> <a href = "Email Us"> Email Us </a></li>
+	<li> <a href = "Live Support"> Live Support </a></li>
+	
+	</ul>
+	</div>
+	
+	<div align="left">
+	<select name="dropdown">
+	<option value="Urban"> Urban </option>
+	<option value="Suburban"> Suburban </option>
+	<option value="Rural"> Rural </option>
+	</select>
+	</div>
+	
+	<ul>
+		@for(user <- users){
+			<li>
+				@user.username - @user.email
+			</li>
+		}
+	</ul>
+	
+	@form(routes.Application.newUser()){
+		@inputText(userForm("Hi"))
+		@inputText(userForm("Username"))
+		@inputText(userForm("Password"))
+		
+		<input type="submit" value="Create New User">
+	}
+}
