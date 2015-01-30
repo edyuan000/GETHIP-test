@@ -1,0 +1,3 @@
+# Messages
+
+sports.list.title={0,choice,0#No sports|1#One sport|1<{0,number,integer} sports} found

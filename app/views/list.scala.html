@@ -1,0 +1,170 @@
+@(currentPage: com.avaje.ebean.Page[Sport], currentSortBy: String, currentOrder: String, currentFilter: String)
+
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage:Int, newSortBy:String) = @{
+    
+    var sortBy = currentSortBy
+    var order = currentOrder
+    
+    if(newSortBy != null) {
+        sortBy = newSortBy
+        if(currentSortBy == newSortBy) {
+            if(currentOrder == "asc") {
+                order = "desc"
+            } else {
+                order = "asc"
+            }
+        } else {
+            order = "asc"
+        }
+    }
+    
+    // Generate the link
+    routes.Application.list(newPage, sortBy, order, currentFilter)
+    
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(key:String, title:String) = {
+    <th class="@key.replace(".","_") header @if(currentSortBy == key) @{if(currentOrder == "asc") "headerSortDown" else "headerSortUp"}">
+        <a href="@link(0, key)">@title</a>
+    </th>
+}
+
+
+@main(""){
+
+<head>
+<style>
+h1 {
+    color: black;
+    text-align: center;
+	font-size: 30 em;
+	font-family: Verdana,Geneva,sans-serif;
+} 
+
+ul {
+	color: blue;
+    text-align: center;
+	font-size: 15 em;
+	font-family: Verdana,Geneva,sans-serif;
+}
+
+div{
+	color: black;
+    text-align: left;
+	font-size: 15 em;
+	font-family: Verdana,Geneva,sans-serif;
+
+}
+
+table, tr, td{
+border: 1px ridge green;
+font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+}
+
+thead {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+form{
+font-size: 15 em;
+}
+
+
+body {
+background-color: #d0e4fe;
+}
+</style>
+</head>
+
+<body>
+
+<h1> College Athletics Search Engine </h1>
+
+<ul> Edward Yuan </ul>
+    
+    <div id="actions">
+        
+        <form action="@link(0, "name")" method="GET">
+		
+           <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by sport name...">
+  <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
+  </form>
+        
+		<h2>
+		</h2>
+        <a class="btn success" id="add" href="@routes.Application.create()">Add a new sport</a>
+        <h3>
+		</h3>
+    </div>
+   
+   
+   
+   
+   
+   
+        
+        <table class="sports zebra-striped">
+            <thead>
+                <tr>
+                    @header("name", "Sport name")
+                    @header("Division", "Division")
+                    @header("college.name", "College")
+					@header("college.st", "State")
+					@header("college.webAddress", "Web Address")
+                </tr>
+            </thead>
+            <tbody>
+
+                @for(sport <- currentPage.getList) {
+                    <tr>
+                        <td><a href="@routes.Application.edit(sport.sportid)">@sport.sportname</a></td>
+                      
+                        <td>
+                            @if(sport.division == null) {
+                                <em>-</em>
+                            } else {
+                                @sport.division
+                            }
+                        </td>
+                        <td>
+                            @if(sport.college == null) {
+                                <em>-</em>
+                            } else {
+                                @sport.college.name
+                            }
+                        </td>
+						<td>
+                            @if(sport.college == null) {
+                                <em>-</em>
+                            } else {
+                                @sport.college.st
+                            }
+                        </td>
+						<td>
+                            @if(sport.college == null) {
+                                <em>-</em>
+                            } else {
+                                <a href= "@sport.college.webAddress" > @sport.college.webAddress <a/>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+		
+        </body>
+
+}

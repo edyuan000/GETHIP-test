@@ -4,11 +4,20 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-<<<<<<< HEAD
-POST	/users						controllers.Application.newInfoForm()
-=======
-POST	/users						controllers.Application.newUser()
->>>>>>> a17284c70c749701b1d49f9913e2ab215b6bf094
+
+# Sport list (look at the default values for pagination parameters)
+GET     /sports                  controllers.Application.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+
+# Add sport
+GET     /sports/new              controllers.Application.create()
+POST    /sports                  controllers.Application.save()
+
+# Edit existing sports
+GET     /sports/:id              controllers.Application.edit(id:Long)
+POST    /sports/:id              controllers.Application.update(id:Long)
+
+# Delete a sport
+POST    /sports/:id/delete       controllers.Application.delete(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

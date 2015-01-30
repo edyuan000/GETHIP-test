@@ -1,0 +1,50 @@
+@(sportForm: Form[Sport])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main(""){
+
+<head>
+<style>
+h1 {
+	color: black;
+    text-align: center;
+	font-size: 30 em;
+	font-family: Verdana,Geneva,sans-serif;
+}
+
+body {
+background-color: #d0e4fe;
+}
+</style>
+</head>
+    
+    <h1>Add a sport</h1>
+    
+    @form(routes.Application.save()) {
+        
+        <fieldset>
+        
+            @inputText(sportForm("sportname"), '_label -> "Sport name")
+			
+			@inputText(sportForm("division"), '_label -> "Division")
+			@select(
+                sportForm("college.id"), 
+                options(College.options), 
+                '_label -> "College", '_default -> "-- Choose a college --",
+                '_showConstraints -> false
+            )
+        
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this sport" class="btn primary"> or 
+            <a href="@routes.Application.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}
