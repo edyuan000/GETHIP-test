@@ -6,26 +6,12 @@
 
 @main(""){
 
+<!DOCTYPE html>
+
+<html>
+
 <head>
-<style>
-h1 {
-    color: black;
-    text-align: center;
-	font-size: 30 em;
-	font-family: Verdana,Geneva,sans-serif;
-}
-
-fieldset {
-	color: black;
-    text-align: left;
-	font-size: 15 em;
-	font-family: Verdana,Geneva,sans-serif;
-}
-
-body {
-background-color: #d0e4fe;
-}
-</style>
+<link rel="stylesheet" href="@routes.Assets.at("stylesheets/forms.css")">
 </head>
     
     <h1>Edit sport</h1>
@@ -36,7 +22,6 @@ background-color: #d0e4fe;
         
 			@inputText(sportForm("sportname"), '_label -> "Sport name")
 			@inputText(sportForm("division"), '_label -> "Division")
-			@inputText(sportForm("college.st"), '_label -> "State")
 			
             
             @select(
@@ -51,12 +36,15 @@ background-color: #d0e4fe;
         <div class="actions">
             <input type="submit" value="Save this sport" class="btn primary"> or 
             <a href="@routes.Application.list()" class="btn">Cancel</a> 
+			
+			
         </div>
         
     }
-    
     @form(routes.Application.delete(id), 'class -> "topRight") {
         <input type="submit" value="Delete this sport" class="btn danger">
     }
     
+    
+	</html>
 }

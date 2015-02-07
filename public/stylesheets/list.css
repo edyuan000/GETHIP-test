@@ -1,0 +1,33 @@
+table, tr, td{
+border: 1px ridge green;
+font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+}
+
+thead {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #ffffff;
+}
+
+form{
+font-size: 15 em;
+}
+
+ul {
+	color: blue;
+    text-align: center;
+	font-size: 15 em;
+	font-family: Verdana,Geneva,sans-serif;
+}
+
+div{
+	color: black;
+    text-align: left;
+	font-size: 15 em;
+	font-family: Verdana,Geneva,sans-serif;
+
+}
+

@@ -39,53 +39,11 @@
 
 @main(""){
 
+
+
 <head>
-<style>
-h1 {
-    color: black;
-    text-align: center;
-	font-size: 30 em;
-	font-family: Verdana,Geneva,sans-serif;
-} 
-
-ul {
-	color: blue;
-    text-align: center;
-	font-size: 15 em;
-	font-family: Verdana,Geneva,sans-serif;
-}
-
-div{
-	color: black;
-    text-align: left;
-	font-size: 15 em;
-	font-family: Verdana,Geneva,sans-serif;
-
-}
-
-table, tr, td{
-border: 1px ridge green;
-font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
-}
-
-thead {
-    font-size: 1.1em;
-    text-align: left;
-    padding-top: 5px;
-    padding-bottom: 4px;
-    background-color: #A7C942;
-    color: #ffffff;
-}
-
-form{
-font-size: 15 em;
-}
-
-
-body {
-background-color: #d0e4fe;
-}
-</style>
+<link rel="stylesheet" href="@routes.Assets.at("stylesheets/list.css")">
+<link rel="stylesheet" href="@routes.Assets.at("stylesheets/forms.css")">
 </head>
 
 <body>
@@ -156,7 +114,7 @@ background-color: #d0e4fe;
                             @if(sport.college == null) {
                                 <em>-</em>
                             } else {
-                                <a href= "@sport.college.webAddress" > @sport.college.webAddress <a/>
+                                <a href= "@sport.college.webAddress" target="_blank"> @sport.college.webAddress <a/>
                             }
                         </td>
                     </tr>
