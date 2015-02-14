@@ -216,8 +216,6 @@ insert into sport (sportid, sportname, division, college_id) values (195, 'Women
 insert into sport (sportid, sportname, division, college_id) values (196, 'Women''s Track and Field', 'NAIA', 6270);
 insert into sport (sportid, sportname, division, college_id) values (197, 'Women''s Track and Field', 'NAIA', 6406);
 insert into sport (sportid, sportname, division, college_id) values (198, 'Women''s Track and Field', 'NAIA', 6984);
-
-
 # --- !Downs
 
 delete from college;
