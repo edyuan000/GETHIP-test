@@ -2,6 +2,10 @@ html {
 background-color: #d0e4fe;
 }
 
+title{
+
+}
+
 h1 {
 	color: black;
     text-align: center;
@@ -11,7 +15,7 @@ h1 {
 
 fieldset {
 	color: black;
-    text-align: center;
+    text-align: left;
 	font-size: 15 em;
 	font-family: Verdana,Geneva,sans-serif;
 }

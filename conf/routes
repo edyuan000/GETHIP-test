@@ -12,6 +12,10 @@ GET     /sports                  controllers.Application.list(p:Int ?= 0, s ?= "
 GET     /sports/new              controllers.Application.create()
 POST    /sports                  controllers.Application.save()
 
+# Add college
+GET     /college/new			controllers.Application.createCollege()
+POST    /college                  controllers.Application.saveCollege()
+
 # Edit existing sports
 GET     /sports/:id              controllers.Application.edit(id:Long)
 POST    /sports/:id              controllers.Application.update(id:Long)

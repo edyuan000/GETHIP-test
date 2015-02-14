@@ -84,6 +84,14 @@ public class Application extends Controller {
             createForm.render(sportForm)
         );
     }
+	
+	public static Result createCollege() {
+        Form<College> collegeForm = form(College.class);
+		
+        return ok(
+            createCollege.render(collegeForm)
+        );
+    }
     
     /**
      * Handle the 'new computer form' submission 
@@ -95,6 +103,16 @@ public class Application extends Controller {
         }
         sportForm.get().save();
         flash("success", "Sport " + sportForm.get().sportname + " has been created");
+        return GO_HOME;
+    }
+	
+	public static Result saveCollege() {
+        Form<College> collegeForm = form(College.class).bindFromRequest();
+        if(collegeForm.hasErrors()) {
+            return badRequest(createCollege.render(collegeForm));
+        }
+        collegeForm.get().save();
+        flash("success", "College " + collegeForm.get().name + " has been created");
         return GO_HOME;
     }
     

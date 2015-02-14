@@ -42,15 +42,20 @@
 
 
 <head>
+<title> College Athletics Search Engine</title>
 <link rel="stylesheet" href="@routes.Assets.at("stylesheets/list.css")">
 <link rel="stylesheet" href="@routes.Assets.at("stylesheets/forms.css")">
+<link rel="shortcut icon" type="image/jpg" href="@routes.Assets.at("images/logo.jpg")">
 </head>
 
 <body>
 
 <h1> College Athletics Search Engine </h1>
+<p> &nbsp; &nbsp; &nbsp; Welcome! This web page is an application that lets high school athletes find different colleges and the sports offered at the specific college.
+The filter will filter through sport names. If you click on the headers, they will sort into alphabetical order. To edit a sport, simply click on its name.
+You can also add sports and add colleges at the top. Thanks for checking out my page!  </p>
+<ul> Eddie Yuan </ul>
 
-<ul> Edward Yuan </ul>
     
     <div id="actions">
         
@@ -63,6 +68,7 @@
 		<h2>
 		</h2>
         <a class="btn success" id="add" href="@routes.Application.create()">Add a new sport</a>
+		<a class="btn success" id="add" href="@routes.Application.createCollege()">Add a new college</a>
         <h3>
 		</h3>
     </div>
@@ -75,16 +81,23 @@
         
         <table class="sports zebra-striped">
             <thead>
-                <tr>
+			<tr>
+					
                     @header("name", "Sport name")
+					
                     @header("Division", "Division")
+					
                     @header("college.name", "College")
+					
 					@header("college.st", "State")
+					
 					@header("college.webAddress", "Web Address")
+					
                 </tr>
-            </thead>
-            <tbody>
-
+			</thead>
+			
+            
+			<tbody>
                 @for(sport <- currentPage.getList) {
                     <tr>
                         <td><a href="@routes.Application.edit(sport.sportid)">@sport.sportname</a></td>

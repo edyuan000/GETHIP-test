@@ -1,15 +1,87 @@
-table, tr, td{
-border: 1px ridge green;
-font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+table {
+	margin:0px;padding:0px;
+	width:100%;
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+	
+	-moz-border-radius-bottomleft:12px;
+	-webkit-border-bottom-left-radius:12px;
+	border-bottom-left-radius:12px;
+	
+	-moz-border-radius-bottomright:12px;
+	-webkit-border-bottom-right-radius:12px;
+	border-bottom-right-radius:12px;
+	
+	-moz-border-radius-topright:12px;
+	-webkit-border-top-right-radius:12px;
+	border-top-right-radius:12px;
+	
+	-moz-border-radius-topleft:12px;
+	-webkit-border-top-left-radius:12px;
+	border-top-left-radius:12px;
+} table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+} tr:last-child td:last-child {
+	-moz-border-radius-bottomright:12px;
+	-webkit-border-bottom-right-radius:12px;
+	border-bottom-right-radius:12px;
 }
-
-thead {
-    font-size: 1.1em;
-    text-align: left;
+table tr:first-child td:first-child {
+	-moz-border-radius-topleft:12px;
+	-webkit-border-top-left-radius:12px;
+	border-top-left-radius:12px;
+}
+ table tr:first-child td:last-child {
+	-moz-border-radius-topright:12px;
+	-webkit-border-top-right-radius:12px;
+	border-top-right-radius:12px;
+} tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:12px;
+	-webkit-border-bottom-left-radius:12px;
+	border-bottom-left-radius:12px;
+} tr:hover td{
+	
+}
+tr:nth-child(odd){ background-color:#aad4ff; }
+tr:nth-child(even)    { background-color:#ffffff; } td{
+	vertical-align:middle;
+	
+	
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:14px;
+	font-size:15px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+} tr:last-child td{
+	border-width:0px 1px 0px 0px;
+} tr td:last-child{
+	border-width:0px 0px 1px 0px;
+} tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+thead{
+	font-size: 30px;
+    text-align: center;
     padding-top: 5px;
     padding-bottom: 4px;
-    background-color: #A7C942;
+    background-color:#005fbf;
     color: #ffffff;
+	border:1px solid #000000;
+	border-width:0px 1px 1px 0px;
+}
+
+p{
+	color: black;
+    text-align: left;
+	font-size: 15 em;
+	font-family: Verdana,Geneva,sans-serif;
 }
 
 form{

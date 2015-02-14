@@ -18,7 +18,7 @@ create table sport (
   constraint pk_sport primary key (sportid))
 ;
 
-create sequence college_seq;
+create sequence college_seq start with 30;
 
 create sequence sport_seq start with 400;
 

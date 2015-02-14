@@ -12,6 +12,7 @@ private static final long serialVersionUID = 1L;
 //	@Id
 //	public Long id;
 	public String sportname;
+	
 	@Id
 	public Long sportid;
 	public String division;

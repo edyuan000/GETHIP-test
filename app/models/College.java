@@ -13,10 +13,14 @@ public class College extends Model{
 
 private static final long serialVersionUID = 1L;
 
+	
 	public String name;
+	
 	@Id
 	public Long id;
+	
 	public String st;
+	
 	public String webAddress;
 	
 //	public College(String name, Long id, String st, String webAddress){
