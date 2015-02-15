@@ -3,6 +3,8 @@ package models;
 import javax.persistence.*;
 import play.db.ebean.*;
 import com.avaje.ebean.*;
+import java.util.*;
+import play.data.validation.*;
 
 @Entity
 public class Sport extends Model{
@@ -44,5 +46,13 @@ private static final long serialVersionUID = 1L;
                 .findPagingList(pageSize)
                 .setFetchAhead(false)
                 .getPage(page);
+    }
+	
+	public static Map<String,String> options() {
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Sport c: Sport.find.orderBy("division").findList()) {
+            options.put(c.division.toString(), c.division);
+        }
+        return options;
     }
 	}

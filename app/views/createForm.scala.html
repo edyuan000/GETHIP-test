@@ -23,7 +23,12 @@
         
             @inputText(sportForm("sportname"), '_label -> "Sport name")
 			
-			@inputText(sportForm("division"), '_label -> "Division")
+			@select(
+                sportForm("division"), 
+                options(Sport.options), 
+                '_label -> "Division", '_default -> "-- Choose a division --",
+                '_showConstraints -> false
+            )
 			@select(
                 sportForm("college.id"), 
                 options(College.options), 
