@@ -21,15 +21,39 @@
         
         <fieldset>
         
+		
+		<!--
             @inputText(collegeForm("id"), '_label -> "College CEEB Code")
 			<a href="http://www.suny.edu/student/search_colleges/college_search.cfm" target="_blank">Don't know your CEEB code? Find it here</a>
 			@inputText(collegeForm("name"), '_label -> "College name")
 			@inputText(collegeForm("st"), '_label -> "College state (entire name)") 
 			@inputText(collegeForm("webAddress"), '_label -> "College web address")
-        
+        -->
+		<label> College CEEB Code </label> 
+			<br>
+			<input type="text" name="id" placeholder="CEEB Code" required>
+			<br>
+			<a href="http://www.suny.edu/student/search_colleges/college_search.cfm" target="_blank">Don't know your CEEB code? Find it here</a>
+			<br>
+			<label> College Name </label> 
+			<br>
+			<input type="text" name="name" placeholder="College name" required>
+			<br>
+			
+			<label> College State (entire name) </label> 
+			<br>
+			<input type="text" name="st" placeholder="College state" required>
+			<br>
+			
+			<label> College Web Address </label> 
+			<br>
+			<input type="text" name="webAddress" placeholder="Web address" required>
+			<br>
+		
 
         </fieldset>
         
+		<br>
         <div class="actions">
             <input type="submit" value="Create this college" class="btn primary"> or 
             <a href="@routes.Application.list()" class="btn">Cancel</a> 

@@ -21,30 +21,83 @@
         
         <fieldset>
         
-            @inputText(sportForm("sportname"), '_label -> "Sport name")
-			
+            <!--@inputText(sportForm("sportname"), '_label -> "Sport name")
+			-->
+			<label> Sport Name </label> 
+			<br>
+			<input type="text" name="sportname" placeholder="Sport name" required>
+			<br>
+		
 			@select(
                 sportForm("division"), 
                 options(Sport.options), 
-                '_label -> "Division", '_default -> "-- Choose a division --",
+                '_label -> "Division", 
                 '_showConstraints -> false
             )
+		
+		
 			@select(
                 sportForm("college.id"), 
                 options(College.options), 
-                '_label -> "College", '_default -> "-- Choose a college --",
+                '_label -> "College", 
                 '_showConstraints -> false
             )
-        
+
+		<!--	 @inputText(sportForm("prospectform"), '_label -> "Prospect form link", '_default -> "Prospect form link", '_id -> "prospectform") -->
+			
+		<!--	<label> Division </label>
+			<br>
+			<select name="divison" required>
+				@for(item <- Sport.options.values) {
+					<option value="@item"> @item </option>
+				}
+			</select>
+			<br>
+			<label> College </label>
+			<br>
+			<select>
+				@for(item <- College.options.keySet) {
+					<option value="@item"> @College.options.get(item) </option>
+				}
+			
+			<!--	@for(item <- College.options.keySet) {
+					<option value="@item"> @College.options.get(item) </option>
+				} 
+			</select>
+			<br>
+			-->
+			
+			<label> Prospect Form Link </label> 
+			<br>
+			<input type="text" name="prospectform" placeholder="Prospect form link">
 
         </fieldset>
-        
+		<br>
+		
+		<!--
+		<select required>
+			<option value="1" selected> Number One </option>
+		</select>
+		<input type="text" name="random" placeholder="Random" required>
+		-->
+		
         <div class="actions">
-            <input type="submit" value="Create this sport" class="btn primary"> or 
+            <input type="submit" value="Create this sport" class="btn primary" onclick="checkValue()"> or 
             <a href="@routes.Application.list()" class="btn">Cancel</a> 
         </div>
         
     }
+	
+	<script>
+		function checkValue() {
+			console.log("Checking Value");
+			if(document.getElementById('prospectform').value == null || document.getElementById('prospectform').value == "") {
+				console.log("Value: " + document.getElementById('prospectform').value);
+				document.getElementById('prospectform').value = "null";
+				console.log(document.getElementById('prospectform').value);
+			}
+		}
+	</script>
     
 	</html>
 }

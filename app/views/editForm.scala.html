@@ -22,11 +22,17 @@
         
         <fieldset>
         
-			@inputText(sportForm("sportname"), '_label -> "Sport name")
+			 @inputText(sportForm("sportname"), '_label -> "Sport Name") 
+			
+		<!--	<label> Sport Name </label> 
+			<br>
+			<input type="text" name="sportname"  required>
+			<br>
+			-->
 			@select(
                 sportForm("division"), 
                 options(Sport.options), 
-                '_label -> "Division", '_default -> "-- Choose a division --",
+                '_label -> "Division", 
                 '_showConstraints -> false
             )
 			
@@ -34,13 +40,22 @@
             @select(
                 sportForm("college.id"), 
                 options(College.options), 
-                '_label -> "College", '_default -> "-- Choose a college --",
+                '_label -> "College",
                 '_showConstraints -> false
             )
 			
 			
         
         </fieldset>
+		
+		@if(!Sport.find.ref(id).prospectform.equals("null")) {
+			<br>
+				<div class="Recruit">
+					<a href="@Sport.find.ref(id).prospectform" target="_blank" class="btn">Recruit Me!</a> 
+				</div>
+			<br>
+		} 
+
         
         <div class="actions">
             <input type="submit" value="Save this sport" class="btn primary"> or 

@@ -20,6 +20,7 @@ private static final long serialVersionUID = 1L;
 	public String division;
 	@ManyToOne
 	public College college;
+	public String prospectform;
 	
 //	public Sport(String sportName, Long id, String division){
 //		this.sportName = sportName;

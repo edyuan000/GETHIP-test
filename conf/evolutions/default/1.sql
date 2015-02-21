@@ -15,6 +15,7 @@ create table sport (
   sportname                 varchar(255),
   division                  varchar(255),
   college_id                bigint,
+  prospectform				varchar(255),
   constraint pk_sport primary key (sportid))
 ;
 

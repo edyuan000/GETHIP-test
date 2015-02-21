@@ -21,14 +21,14 @@ public class Application extends Controller {
     );
     
     /**
-     * Handle default path requests, redirect to computers list
+     * Handle default path requests, redirect to sport list
      */
     public static Result index() {
         return GO_HOME;
     }
 
     /**
-     * Display the paginated list of computers.
+     * Display the paginated list of sports.
      *
      * @param page Current page number (starts from 0)
      * @param sortBy Column to be sorted
@@ -45,9 +45,9 @@ public class Application extends Controller {
     }
     
     /**
-     * Display the 'edit form' of a existing Computer.
+     * Display the 'edit form' of a existing sport.
      *
-     * @param id Id of the computer to edit
+     * @param id Id of the sport to edit
      */
     public static Result edit(Long id) {
         Form<Sport> sportForm = form(Sport.class).fill(
@@ -61,7 +61,7 @@ public class Application extends Controller {
     /** 
      * Handle the 'edit form' submission 
      *
-     * @param id Id of the computer to edit
+     * @param id Id of the sport to edit
      */
     public static Result update(Long id) {
         Form<Sport> sportForm = form(Sport.class).bindFromRequest();
@@ -75,7 +75,7 @@ public class Application extends Controller {
     }
     
     /**
-     * Display the 'new computer form'.
+     * Display the 'new sport form'.
      */
     public static Result create() {
         Form<Sport> sportForm = form(Sport.class);
@@ -94,7 +94,7 @@ public class Application extends Controller {
     }
     
     /**
-     * Handle the 'new computer form' submission 
+     * Handle the 'new sport form' submission 
      */
     public static Result save() {
         Form<Sport> sportForm = form(Sport.class).bindFromRequest();
@@ -117,7 +117,7 @@ public class Application extends Controller {
     }
     
     /**
-     * Handle computer deletion
+     * Handle sport deletion
      */
     public static Result delete(Long id) {
         Sport.find.ref(id).delete();
