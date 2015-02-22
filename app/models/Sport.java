@@ -28,7 +28,7 @@ private static final long serialVersionUID = 1L;
 //		this.division = division;
 //	}
 	
-	public static Finder<Long, Sport> find = new Finder<Long, Sport>(Long.class, Sport.class);
+	public static Model.Finder<Long, Sport> find = new Model.Finder<Long, Sport>(Long.class, Sport.class);
 	
 	
 //	public static College create(College col){
