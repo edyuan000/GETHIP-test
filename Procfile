@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/GETHIP-test -Dhttp.port=${PORT} ${JAVA_OPTS} -DapplyDownEvolutions.default=true -DapplyEvolutions.default=true -Ddp=org.postgresql.Driver -Ddp.default.url=${DATABASE_URL}
+web: target/start -Dhttp.port=${PORT} ${JAVA_OPTS}
