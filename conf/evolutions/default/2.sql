@@ -17,6 +17,7 @@ insert into college (id, name, st, web_address) values ( 6406, 'Midland Universi
 insert into college (id, name, st, web_address) values ( 6468, 'Peru State College', 'Nebraska', 'http://www.pscbobcats.com');
 insert into college (id, name, st, web_address) values ( 6106, 'College of Saint Mary', 'Nebraska', 'http://www.csmflames.com');
 insert into college (id, name, st, web_address) values ( 6984, 'York College', 'Nebraska', 'http://www.ycpanthers.com');
+insert into college (id, name, st, web_address) values ( 3965, 'Williams College', 'Massachusetts', 'http://athletics.williams.edu/');
 
 
 insert into sport (sportid, sportname, division, college_id, prospectform) values (6, 'Men''s Golf', 'NAIA', 6053, 'http://bubruins.com/sports/mgolf/prospectiveathlete');
@@ -218,6 +219,12 @@ insert into sport (sportid, sportname, division, college_id, prospectform) value
 insert into sport (sportid, sportname, division, college_id, prospectform) values (186, 'Volleyball', 'NAIA', 6468, 'http://pscbobcats.com/sb_output.aspx?form=3&path=wvball');
 insert into sport (sportid, sportname, division, college_id, prospectform) values (187, 'Volleyball', 'NAIA', 6106, 'http://www.csmflames.com/recruiting/0/7.php');
 insert into sport (sportid, sportname, division, college_id, prospectform) values (188, 'Volleyball', 'NAIA', 6984, 'http://www.ycpanthers.com/recruiting/0/14.php');
+insert into sport (sportid, sportname, division, college_id, prospectform) values (200, 'Men''s Basketball', 'Division 3', 3965, 'http://ephsports.williams.edu/sports/mbkb/recruitForm');
+insert into sport (sportid, sportname, division, college_id, prospectform) values (201, 'Men''s Golf', 'Division 3', 3965, 'http://ephsports.williams.edu/sports/mgolf/prospectiveathlete');
+insert into sport (sportid, sportname, division, college_id, prospectform) values (202, 'Baseball', 'Division 3', 3965, 'http://ephsports.williams.edu/sports/bsb/prospectiveathlete');
+
+
+
 
 # --- !Downs
 
