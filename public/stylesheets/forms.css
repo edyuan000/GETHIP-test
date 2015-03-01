@@ -48,3 +48,9 @@ fieldset {
   text-decoration: none;
 }
 
+p{
+	color: black;
+    text-align: left;
+	font-size: 15 em;
+	font-family: Verdana,Geneva,sans-serif;
+}
